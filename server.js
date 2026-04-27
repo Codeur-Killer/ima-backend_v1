@@ -119,7 +119,7 @@ const PORT = parseInt(process.env.PORT) || 5000;
 server.listen(PORT, () => {
   console.log('\n╔══════════════════════════════════════════╗');
   console.log(`║  🏆 IMA Awards API v2                     ║`);
-  console.log(`║  🌍  http://localhost:${PORT}                ║`);
+  console.log(`║  🌍  ${PORT}                ║`);
   console.log(`║  🔌  Socket.io actif                      ║`);
   console.log(`║  💳  FedaPay: ${process.env.FEDAPAY_ENV || 'sandbox'}                  ║`);
   console.log(`║  📁  Uploads: /${process.env.UPLOAD_DIR || 'uploads'}                  ║`);
