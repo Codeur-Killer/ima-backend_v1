@@ -25,6 +25,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 connectDB();
 
 const app    = express();
+
+app.set('trust proxy', 1);
 // MANQUANT
 app.use(express.json());
 const server = http.createServer(app);
