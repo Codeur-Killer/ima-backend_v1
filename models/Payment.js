@@ -43,6 +43,6 @@ const paymentSchema = new mongoose.Schema({
 paymentSchema.index({ status: 1, createdAt: -1 });
 paymentSchema.index({ customerEmail: 1 });
 paymentSchema.index({ artist: 1 });
-paymentSchema.index({ transactionRef: 1 });
+// paymentSchema.index({ transactionRef: 1 });
 
 export default mongoose.model('Payment', paymentSchema);
