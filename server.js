@@ -25,9 +25,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 connectDB();
 
 const app    = express();
+// MANQUANT
+app.use(express.json());
 const server = http.createServer(app);
 
-initSocketIO(server, process.env.CORS_ORIGIN || 'http://localhost:5173');
+initSocketIO(server, process.env.CORS_ORIGIN);
 
 // ── Security ──────────────────────────────────────────────────────────────────
 app.use(helmet({
@@ -35,7 +37,7 @@ app.use(helmet({
 }));
 app.use(compression());
 
-const allowedOrigins = (process.env.CORS_ORIGIN || 'http://localhost:5173')
+const allowedOrigins = (process.env.CORS_ORIGIN)
   .split(',').map(s => s.trim());
 
 app.use(cors({

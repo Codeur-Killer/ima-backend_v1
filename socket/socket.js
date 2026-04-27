@@ -6,7 +6,7 @@ let socketIO = null;
 export const initSocketIO = (httpServer, corsOrigin) => {
   socketIO = new Server(httpServer, {
     cors: {
-      origin: (corsOrigin || 'http://localhost:5173').split(','),
+      origin: (corsOrigin).split(','),
       methods: ['GET', 'POST'],
       credentials: true,
     },
