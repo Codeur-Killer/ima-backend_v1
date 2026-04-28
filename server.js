@@ -39,18 +39,15 @@ app.use(helmet({
 }));
 app.use(compression());
 
-const allowedOrigins = (process.env.CORS_ORIGIN)
-  .split(',').map(s => s.trim());
+// const allowedOrigins = (process.env.CORS_ORIGIN)
+//   .split(',').map(s => s.trim());
 
-// app.use(cors({
-//   origin: (origin, cb) => {
-//     if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
-//     cb(null, false);
-//   },
-//   credentials: true,
-//   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
-//   allowedHeaders: ['Content-Type','Authorization'],
-// }));
+app.use(cors({
+ origin: process.env.CORS_ORIGIN,
+ credentials: true,
+ methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+ allowedHeaders: ['Content-Type','Authorization']
+}));
 
 app.use(cors({
  origin: process.env.CORS_ORIGIN,
